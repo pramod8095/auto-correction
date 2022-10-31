@@ -1,0 +1,16 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  readonly_paths:
+    - src/App.test.js
+  scoring:
+    command: "bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm test"
+    files:
+      - junit.xml
+  ide_config:
+    default_open_files:
+      - src/components/AutocorrectTextarea.js
+    project_menu:
+      run: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm start
+      install: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm install
+      test: bash bin/env_setup && . $HOME/.nvm/nvm.sh && npm test
